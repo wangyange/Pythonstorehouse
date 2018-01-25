@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '代理端口分布'
+            },
+            tooltip: {},
+            legend: {
+                data:['端口名']
+            },
+            xAxis: {
+                data: ['8118', '9797', '3128', '808', '8010', '8123', '9999', '80', '8888', '9000']
+            },
+            yAxis: {},
+            series: [{
+                name: '端口名',
+                type: 'bar',
+                data: [15, 12, 9, 9, 5, 5, 4, 4, 4, 4]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
